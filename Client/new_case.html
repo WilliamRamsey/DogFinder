@@ -7,7 +7,7 @@
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
    <script src="https://unpkg.com/htmx.org@1.9.2" integrity="sha384-L6OqL9pRWyyFU3+/bjdSri+iIphTN/bvYyM37tICVyOJkWZLpP2vGn6VUEXgzg6h" crossorigin="anonymous"></script>
 
-   <title>Pet Finder | Home</title>
+   <title>Open Case | Pet Finder</title>
 </head>
 <body class="bg-light">
 
@@ -42,7 +42,46 @@
         </div>
       </nav>
 
-      
+    <!-- Form to add lost animal -->
+    <form action="http://127.0.0.1:5500/create_new_case.html">
+      <p>Did you loose this animal or did you find it?</p>
+      <input id="lost" type="radio" name="is_lost" value="True">
+      <label for="lost">I Lost This Animal</label>
+      <input id="found" type="radio" name="is_lost" value="False">
+      <label for="found">I Found This Animal</label>
+      <hr>
+
+      <label for="animal_name_first">Animal Name (Leave Blank if Unknown):</label>
+      <input id="animal_name_first" type="text" name="name" value="">
+      <hr>
+
+      <p>Select Animal Type:</p>
+      <input id="dog" type="radio" name="animal_type" value="dog">
+      <label for="dog">Dog</label>
+      <input id="cat" type="radio" name="animal_type" value="cat">
+      <label for="cat">Cat</label>
+      <input id="pig" type="radio" name="animal_type" value="pig">
+      <label for="pig">Pig</label>
+      <input id="reptile" type="radio" name="animal_type" value="reptile">
+      <label for="reptile">Reptile</label>
+      <input id="chicken" type="radio" name="animal_type" value="chicken">
+      <label for="chicken">Chicken</label>
+      <input id="other" type="radio" name="animal_type" value="other">
+      <label for="other">Other</label>
+      <input id="type_unknown" type="radio" name="animal_type" value="unknown">
+      <label for="type_unknown">Unknown</label>
+      <hr>
+
+      <p>Select Animal Sex:</p>
+      <input id="male" type="radio" name="sex" value="male">
+      <label for="male">Male</label>
+      <input id="female" type="radio" name="sex" value="female">
+      <label for="female">Female</label>
+      <input id="unknown_sex" type="radio" name="sex" value="unknown">
+      <label for="unknown_sex">Unknown</label>
+      <hr>
+      <input type="submit">
+    </form>
 
    <!-- Bootstrap Imports -->
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
