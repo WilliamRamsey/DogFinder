@@ -45,7 +45,7 @@ def new_case():
 def create_new_case():
     is_lost = request.args.get("anima_is_lost")
     name = request.args.get("animal_name")
-    animal_type = request.args.get("animal_species")
+    species = request.args.get("animal_species")
     sex = request.args.get('animal_sex')
 
     if is_lost == "True":
@@ -62,7 +62,7 @@ def create_new_case():
     if sex == "u":
         sex = None
     
-    new_animal = animal(is_lost=is_lost, name=name, animal_type=animal_type, sex=sex)
+    new_animal = animal(is_lost=is_lost, name=name, species=species, sex=sex)
     new_id = new_animal.save()
     return new_id
 

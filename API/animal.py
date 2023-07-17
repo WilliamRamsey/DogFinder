@@ -47,13 +47,13 @@ class animal:
         self.image = image
         
         # Links to person class so contact information can be added
-        self.found_by = found_by
-        self.lost_from = lost_from
+
     
     def populate_from_sql(self):
         pass
 
     def save(self):
+        # get list of ids in database
         db.save_animal(self)
 
         """
